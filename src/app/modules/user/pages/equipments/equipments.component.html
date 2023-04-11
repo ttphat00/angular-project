@@ -1,0 +1,17 @@
+<div class="equipment-row">
+  <div class="mb-2">
+    <a [routerLink]="['../']">Home </a>/<a [routerLink]="['./']" [queryParams]="{type: type}"> {{type}} </a><span *ngIf="brand">/ {{brand}}</span>
+  </div>
+  <div class="card text-center float-left mr-3 mb-3" style="width: 18rem;" *ngFor="let equipment of filterEquipments">
+    <img src="{{equipment.image}}" class="card-img-top equipment-image" alt="">
+    <div class="card-body">
+      <h5 class="card-title">{{equipment.name}}</h5>
+      <p class="card-text" style="height: 98px; overflow: auto;">{{equipment.description}}</p>
+      <div class="additional border-top">
+        <div class="card-text">Brand: <span>{{equipment.brandId.name}}</span></div>
+        <div class="card-text">Type: <span>{{equipment.brandId.deviceTypeId.name}}</span></div>
+      </div>
+      <button class="btn btn-primary" (click)="sendBorrowingRequest(equipment._id)">Borrow</button>
+    </div>
+  </div>
+</div>

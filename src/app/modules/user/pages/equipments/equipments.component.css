@@ -1,0 +1,21 @@
+.equipment-image{
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body{
+    padding: 0.8rem;
+}
+
+.equipment-row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.additional{
+    width: 50%;
+    margin: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+}

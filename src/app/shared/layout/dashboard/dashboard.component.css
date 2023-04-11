@@ -1,0 +1,44 @@
+.admin-dashboard{
+    width: 275px;
+    min-height: 100vh;
+}
+
+.admin-name{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.menu-nav-link{
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px 0;
+}
+
+.menu-nav-link:hover{
+    background-color: rgb(141, 140, 140);
+}
+
+.btn-logout{
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.btn-logout:hover{
+    background-color: rgb(141, 140, 140);
+}
+
+.my-profile{
+    padding: 0 24px;
+    text-align: left;
+}
+
+.my-profile:hover{
+    background-color: rgb(141, 140, 140);
+}
+
+mat-expansion-panel-header:hover {
+    background-color: rgb(141, 140, 140) !important;
+}

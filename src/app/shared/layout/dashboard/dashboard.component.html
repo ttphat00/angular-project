@@ -1,0 +1,79 @@
+<div class="d-flex">
+    <div class="admin-dashboard bg-dark">
+        <div class="w-50 m-auto text-white text-center pt-4 pb-4 border-bottom">
+            <img class="w-100" src="{{user?.avatar}}" alt="" style="border-radius: 50%;">
+            <div class="admin-name mt-1">{{user?.firstName}}</div>
+        </div>
+        <div>
+            <ul class="text-center">
+                <li>
+                    <div class="my-profile">
+                        <a class="menu-nav-link" routerLink="">My Profile</a>
+                    </div>
+                </li>
+                <li>
+                    <mat-accordion>
+                        <mat-expansion-panel class="bg-dark">
+                          <mat-expansion-panel-header>
+                            <mat-panel-title class="text-white">
+                              User Management
+                            </mat-panel-title>
+                          </mat-expansion-panel-header>
+                          <a class="menu-nav-link" routerLink="./accounts">User Accounts</a>
+                          <a class="menu-nav-link" routerLink="./create-account">Create Account</a>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </li>
+                <!-- <li>
+                    <mat-accordion>
+                        <mat-expansion-panel class="bg-dark">
+                          <mat-expansion-panel-header>
+                            <mat-panel-title class="text-white">
+                              Role Management
+                            </mat-panel-title>
+                          </mat-expansion-panel-header>
+                          <a class="menu-nav-link" routerLink="">Role List</a>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </li> -->
+                <li>
+                    <mat-accordion>
+                        <mat-expansion-panel class="bg-dark">
+                          <mat-expansion-panel-header>
+                            <mat-panel-title class="text-white">
+                              Equipment Management
+                            </mat-panel-title>
+                          </mat-expansion-panel-header>
+                          <a class="menu-nav-link" routerLink="./equipments">Equipment List</a>
+                          <a class="menu-nav-link" routerLink="./add-equipment">Add Equipment</a>
+                          <a class="menu-nav-link" routerLink="./assigning-equipments">Assignment</a>
+                          <a class="menu-nav-link" routerLink="">Device Types</a>
+                          <a class="menu-nav-link" routerLink="">Brands</a>
+                          <!-- <a class="menu-nav-link" routerLink="">Equipment Status</a> -->
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </li>
+                <li>
+                    <mat-accordion>
+                        <mat-expansion-panel class="bg-dark shadow-none">
+                          <mat-expansion-panel-header>
+                            <mat-panel-title class="text-white">
+                              Request Management
+                            </mat-panel-title>
+                          </mat-expansion-panel-header>
+                          <a class="menu-nav-link" routerLink="./requests">User Requests</a>
+                          <!-- <a class="menu-nav-link" routerLink="">Request Types</a>
+                          <a class="menu-nav-link" routerLink="">Request Status</a> -->
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </li>
+                <li>
+                    <div class="btn-logout" (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="p-3 w-100"> 
+        <ng-content></ng-content>
+    </div>
+</div>

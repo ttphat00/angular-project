@@ -1,0 +1,125 @@
+.logo{
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    font-family: cursive;
+    font-size: 1.5rem;
+    color: #5e2269;
+}
+
+.user-menu{
+    margin-right: 140px;
+    cursor: pointer;
+}
+
+.user-name-link{
+    color: #5e2269;
+}
+
+.dropdown-user-menu{
+    position: absolute;
+    top: 24px;
+    left: 0;
+    background-color: white;
+    width: 200px;
+    display: none;
+    z-index: 99;
+}
+
+.user-menu:hover .dropdown-user-menu{
+    display: block;
+}
+
+.dropdown-user-menu > ul{
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.dropdown-user-menu-link{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-user-menu-logout{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-user-menu-link:hover{
+    background-color: rgb(211, 207, 207);
+}
+
+.dropdown-user-menu-logout:hover{
+    background-color: rgb(211, 207, 207);
+}
+
+.search-input{
+    border: 1px solid #5e2269;
+    outline: none;
+    border-radius: 5px;
+    padding: 0 30px 0 5px;
+}
+
+.btn-search{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    color: #5e2269;
+    cursor: pointer;
+}
+
+.header-menu-nav{
+    background-color: #f3d129;
+}
+
+.menu-nav-list{
+    list-style: none;
+}
+
+.menu-nav-link{
+    display: block;
+    padding: 4px 8px;
+    width: 150px;
+    text-align: center;
+    color: #5e2269;
+    text-decoration: none;
+    transition: background-color 0.3s linear;
+}
+
+.menu-nav-link:hover{
+    background-color: #f3ac29;
+}
+
+.dropdown-equipment-type-menu{
+    position: absolute;
+    top: 28px;
+    left: 0;
+    background-color: white;
+    width: 200px;
+    display: none;
+    z-index: 99;
+}
+
+.equipment-type-menu:hover .dropdown-equipment-type-menu{
+    display: block;
+}
+
+.dropdown-equipment-type-menu > ul{
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.dropdown-equipment-type-menu-link{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-equipment-type-menu-link:hover{
+    background-color: rgb(211, 207, 207);
+}

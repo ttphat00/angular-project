@@ -1,0 +1,27 @@
+<div>
+    <h3>My Requests</h3>
+    <table class="table table-bordered mt-4">
+        <thead class="table-warning text-center">
+          <tr>
+            <th scope="col">Equipment Name</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Type</th>
+            <th scope="col">Request Status</th>
+            <th scope="col">Message</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of requests">
+            <td>{{request.equipmentId.name}}</td>
+            <td>{{request.equipmentId.brandId.name}}</td>
+            <td>{{request.equipmentId.brandId.deviceTypeId.name}}</td>
+            <td>{{request.statusId.name}}</td>
+            <td>{{request.message}}</td>
+            <td class="text-center">
+                <i class="fa-solid fa-trash text-danger" style="cursor: pointer;" (click)="deleteBorrowingRequest(request)"></i>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>

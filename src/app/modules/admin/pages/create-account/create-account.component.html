@@ -1,0 +1,41 @@
+<div class="create-account-container">
+    <h1 class="text-center">Create Account</h1>
+    
+    <form class="pt-3" [formGroup]="createAccountForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="outline" class="mr-5">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName">
+            <mat-error *ngIf="firstName?.invalid">{{getErrorFirstName()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName">
+            <!-- <mat-error *ngIf="lastName?.invalid">{{getErrorLastName()}}</mat-error> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="email?.invalid">{{getErrorEmail()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="password?.invalid">{{getErrorPassword()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="role">
+              <mat-option value="" disabled>-Select Role-</mat-option>
+              <mat-option *ngFor="let role of roleService.roles" [value]="role._id">{{role.name}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="role?.invalid">{{getErrorRole()}}</mat-error>
+        </mat-form-field>
+        <div class="text-center mt-3">
+            <button mat-flat-button color="primary" class="col-3" [disabled]="!createAccountForm.valid">Create</button>
+        </div>
+    </form>
+</div>

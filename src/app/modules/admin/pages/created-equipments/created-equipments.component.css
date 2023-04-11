@@ -1,0 +1,78 @@
+.equipment-image{
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body{
+    padding: 0.8rem;
+}
+
+.equipment-row {
+    width: 1260px;
+    margin: auto;
+}
+
+.equipment-row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.additional{
+    width: 50%;
+    margin: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.mat-mdc-form-field {
+    font-size: 1rem;
+    width: 100%;
+}
+
+tr.example-detail-row {
+    height: 0;
+}
+  
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+    background: #efefef;
+}
+
+.example-element-row td {
+    border-bottom-width: 0;
+}
+
+.example-element-detail {
+    overflow: hidden;
+    display: flex;
+    height: 200px;
+}
+
+.example-element-avatar {
+    width: 80px;
+    height: 80px;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+.example-element-info {
+    padding: 16px;
+}
+
+.example-element-info-title{
+    display: inline-block;
+    width: 100px;
+    font-weight: 500;
+}

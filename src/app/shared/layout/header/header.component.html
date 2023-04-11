@@ -1,0 +1,46 @@
+<header>
+    <div class="d-flex justify-content-end header-top p-3 position-relative">
+        <div class="logo">Equipment Management</div>
+        <div class="mr-4 position-relative">
+            <input type="search" class="search-input">
+            <i class="fa-solid fa-magnifying-glass btn-search"></i>
+        </div>
+        <div class="user-menu position-relative">
+            <div class="user-name-link"><i class="fa-solid fa-user"></i> {{user?.firstName}} {{user?.lastName}} </div>
+            <div class="dropdown-user-menu shadow">
+                <ul>
+                    <li>
+                        <a class="dropdown-user-menu-link border-bottom" routerLink="">My Info</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-user-menu-link border-bottom" routerLink="./my-requests">My Requests</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-user-menu-link border-bottom" routerLink="./borrowing-equipments">Borrowing Equipments</a>
+                    </li>
+                    <li class="dropdown-user-menu-logout" (click)="logout()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Logout
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header-menu-nav">
+        <ul class="d-flex justify-content-center font-weight-bolder menu-nav-list">
+            <li>
+                <a class="menu-nav-link" routerLink="./">Home</a>
+            </li>
+            <li class="position-relative equipment-type-menu" *ngFor="let type of equipmentTypeService.equipmentTypes">
+                <a class="menu-nav-link" [routerLink]="['equipments']" [queryParams]="{type: type.name}">{{type.name}}</a>
+                <div class="dropdown-equipment-type-menu shadow" *ngIf="getFilterBrands(type._id)?.length">
+                    <ul>
+                        <li *ngFor="let brand of getFilterBrands(type._id)">
+                            <a class="dropdown-equipment-type-menu-link border-bottom" [routerLink]="['equipments']" [queryParams]="{type: type.name, brand: brand.name}">{{brand.name}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>

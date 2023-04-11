@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Edit Equipment</h1>
+<div mat-dialog-content>
+  <form [formGroup]="editEquipmentForm" (ngSubmit)="onSubmit(data._id)">
+    <div class="mb-3"> 
+      <span class="example-element-info-title">Name:</span>
+      <input id="name" type="text" class="form-control" formControlName="name">
+      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="alert alert-danger">
+          <div *ngIf="name?.errors?.['required']">
+              Name is required.
+          </div>
+      </div>
+    </div>
+    <div class="mb-3"> 
+      <span class="example-element-info-title">Description:</span>
+      <textarea id="description" rows="2" class="form-control" formControlName="description"></textarea>
+      <div *ngIf="description?.invalid && (description?.dirty || description?.touched)" class="alert alert-danger">
+          <div *ngIf="description?.errors?.['required']">
+              Description is required.
+          </div>
+      </div>
+    </div>
+    <div class="mb-3"> 
+      <span class="example-element-info-title">Image:</span><br>
+      <input id="image" type="file" class="form-control- file" formControlName="image" (change)="onFileChange($event)">
+    </div>
+    <div class="mb-3"> 
+      <span class="example-element-info-title">Status:</span>
+      <select id="status" class="form-control" formControlName="status">
+        <option *ngFor="let sts of equipmentStatusService.equipmentStatus" [ngValue]="sts._id">{{sts.name}}</option>
+    </select>
+    </div>
+  
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary col-3" [disabled]="!editEquipmentForm.valid">Edit</button>
+    </div>
+  </form>
+</div>
